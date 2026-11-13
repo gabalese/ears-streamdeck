@@ -4,7 +4,7 @@ A Stream Deck key that toggles [Ears](https://retina.studio/ears/)' InstaMute an
 
 | Live | Muted |
 |:---:|:---:|
-| ![live](com.gabalese.ears.sdPlugin/imgs/key-live@2x.png) | ![muted](com.gabalese.ears.sdPlugin/imgs/key-muted@2x.png) |
+| ![live](it.alese.ears.sdPlugin/imgs/key-live@2x.png) | ![muted](it.alese.ears.sdPlugin/imgs/key-muted@2x.png) |
 
 ## How it works
 
@@ -19,10 +19,10 @@ A Stream Deck key that toggles [Ears](https://retina.studio/ears/)' InstaMute an
 
 ## Install
 
-1. Download `com.gabalese.ears.streamDeckPlugin` from the [latest release](../../releases/latest) and double-click it.
+1. Download `it.alese.ears.streamDeckPlugin` from the [latest release](../../releases/latest) and double-click it.
 2. If macOS blocks the binary (it is not notarized), run:
    ```
-   xattr -dr com.apple.quarantine ~/Library/Application\ Support/com.elgato.StreamDeck/Plugins/com.gabalese.ears.sdPlugin
+   xattr -dr com.apple.quarantine ~/Library/Application\ Support/com.elgato.StreamDeck/Plugins/it.alese.ears.sdPlugin
    ```
    and restart Stream Deck.
 3. Drag **Ears Mute → Toggle Mute** onto a key.
@@ -33,7 +33,7 @@ A Stream Deck key that toggles [Ears](https://retina.studio/ears/)' InstaMute an
 Requires the Xcode Command Line Tools.
 
 ```
-./build.sh      # builds the binary and icons into com.gabalese.ears.sdPlugin
+./build.sh      # builds the binary and icons into it.alese.ears.sdPlugin
 ./install.sh    # symlinks the plugin into Stream Deck and restarts it
 ./package.sh    # creates release artifacts in dist/
 ```

@@ -1,9 +1,9 @@
 {
   "Name": "Ears Mute",
-  "Version": "1.0.0.0",
-  "Author": "gabalese",
+  "Version": "1.1.0.0",
+  "Author": "Gabriele Alese",
   "Description": "Toggle Ears' InstaMute; the key shows whether your microphone is live or muted.",
-  "UUID": "com.gabalese.ears",
+  "UUID": "it.alese.ears",
   "SDKVersion": 2,
   "CodePath": "ears-streamdeck",
   "Icon": "imgs/plugin",
@@ -20,7 +20,7 @@
   },
   "Actions": [
     {
-      "UUID": "com.gabalese.ears.mute.toggle",
+      "UUID": "it.alese.ears.mute.toggle",
       "Name": "Toggle Mute",
       "Tooltip": "Toggle Ears InstaMute. Green = mic live, red = muted.",
       "Icon": "imgs/action",

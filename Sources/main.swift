@@ -23,7 +23,7 @@ guard let port = args["-port"], let pluginUUID = args["-pluginUUID"], let regist
     exit(1)
 }
 
-let actionUUID = "com.gabalese.ears.mute.toggle"
+let actionUUID = "it.alese.ears.mute.toggle"
 let stateLive = 0, stateMuted = 1
 
 // MARK: - WebSocket
