@@ -43,3 +43,7 @@ Requires the Xcode Command Line Tools.
 Every key event and state change is logged to `~/Library/Logs/ElgatoStreamDeck/ears-plugin-debug.log`.
 
 A key showing red while Ears thinks you're live means the device itself was left muted outside Ears; press twice to resync.
+
+## Releases
+
+Every push to `main` builds the plugin on GitHub Actions and publishes it to the release matching the manifest version (`1.1.0.0` → `v1.1.0`). Bump `Version` in `it.alese.ears.sdPlugin/manifest.json` to cut a new release; other commits refresh the current release's files.

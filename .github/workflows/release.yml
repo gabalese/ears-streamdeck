@@ -1,0 +1,41 @@
+name: Build and release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: macos-15 # Apple Silicon
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build and package
+        run: ./package.sh
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION=$(jq -r .Version it.alese.ears.sdPlugin/manifest.json | cut -d. -f1-3)
+          TAG="v$VERSION"
+          FILES=(dist/it.alese.ears.streamDeckPlugin dist/it.alese.ears.sdPlugin.zip)
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Updating assets of existing release $TAG"
+            gh release upload "$TAG" "${FILES[@]}" --clobber
+          else
+            echo "Creating release $TAG"
+            gh release create "$TAG" "${FILES[@]}" --target "$GITHUB_SHA" --title "$TAG" --generate-notes
+          fi
